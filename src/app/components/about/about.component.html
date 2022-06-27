@@ -1,0 +1,40 @@
+<!-- About-->
+<section class="resume-section" id="about">
+  <div class="resume-section-content">
+    <h1 class="mb-0">
+      {{ users.firstName }}
+      <span class="text-primary">{{ users.lastName }}</span>
+    </h1>
+    <div class="subheading mb-5">
+      {{ users.city }} · {{ users.country }} ·
+      <a href="mailto:{{ users.email }}">{{ users.email }}</a>
+    </div>
+    <p class="lead mb-5">
+      {{ users.preface }}
+    </p>
+    <div class="social-icons">
+      <a class="social-icon" href="{{ users.socialMedia }}"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a class="social-icon" href="{{ users.socialMedia }}"
+        ><i class="fab fa-github"></i
+      ></a>
+      <a class="social-icon" href="{{ users.socialMedia }}"
+        ><i class="fab fa-medium"></i
+      ></a>
+      <a class="social-icon" href="{{ users.socialMedia }}"
+        ><i class="fab fa-stack-overflow"></i
+      ></a>
+      <a class="social-icon" href="{{ users.socialMedia }}"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a class="social-icon" href="{{ users.socialMedia }}"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a class="social-icon" href="{{ users.socialMedia }}"
+        ><i class="fab fa-instagram"></i
+      ></a>
+    </div>
+  </div>
+</section>
+<hr class="m-0" />

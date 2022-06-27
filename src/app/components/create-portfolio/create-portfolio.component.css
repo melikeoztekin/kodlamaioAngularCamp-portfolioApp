@@ -1,0 +1,88 @@
+.form-section {
+  padding: 5rem 17rem 0px 0px;
+}
+
+.center {
+  position: relative;
+  padding: 50px 0px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.accordion-button {
+  font-size: 1em;
+  border-left: 5px solid #8854d0;
+  padding: 10px;
+  color: #000;
+  letter-spacing: 5px;
+  font-weight: bold;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.inputbox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.center .inputbox input,
+.center .inputbox textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 1px solid #999;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+.center .inputbox:last-child {
+  margin-bottom: 0;
+}
+
+.center .inputbox span {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-size: 1em;
+  transition: 0.6s;
+  font-family: sans-serif;
+}
+
+.center .inputbox input:focus~span,
+.center .inputbox textarea:focus~span,
+.center .inputbox input:valid~span,
+.center .inputbox textarea:valid~span {
+  transform: translateX(-15px) translateY(-25px);
+  font-size: .8em;
+  background-color: #fff;
+  padding: 0 10px;
+}
+
+.center .inputbox [type="button"] {
+  background: #8854d0;
+  color: #fff;
+  border: #fff;
+}
+
+.center .inputbox:hover [type="button"] {
+  transition: 10ms;
+  background: linear-gradient(45deg, #bc9ee6, #8854d0);
+}
+
+@media (max-width: 992px) {
+  .form-section {
+    padding: 3rem 8rem 0px 8rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .form-section {
+    padding: 1rem;
+  }
+}

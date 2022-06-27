@@ -1,0 +1,366 @@
+<div class="form-section">
+  <h2 class="text-center">Create your Portfolio</h2>
+  <div
+    class="accordion accordion-flush center border-none"
+    id="accordionFlushExample"
+  >
+    <div class="accordion-item mb-3">
+      <h5 class="accordion-header" id="flush-headingOne">
+        <div
+          class="accordion-button collapsed center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne"
+          aria-expanded="false"
+          aria-controls="flush-collapseOne"
+        >
+          set yourself a username
+        </div>
+      </h5>
+      <div
+        id="flush-collapseOne"
+        class="center accordion-collapse collapse show"
+        aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushExample"
+      >
+        <p class="small text-primary">
+          I suggest you make a meaningful username.
+          <strong>Because it will be in your address bar.</strong>
+        </p>
+        <div class="accordion-body">
+          <form [formGroup]="userForm">
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="userName"
+                id="userName"
+                name="userName"
+                required="required"
+              />
+              <span>User Name</span>
+            </div>
+            <div class="inputbox">
+              <input class="btn btn-success" type="button" value="Next" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item mb-3">
+      <h5 class="accordion-header" id="flush-headingOne">
+        <div
+          class="accordion-button collapsed center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo"
+          aria-expanded="false"
+          aria-controls="flush-collapseTwo"
+        >
+          let's get to know you briefly
+        </div>
+      </h5>
+      <div
+        id="flush-collapseTwo"
+        class="center accordion-collapse collapse"
+        aria-labelledby="flush-headingTwo"
+        data-bs-parent="#accordionFlushExample"
+      >
+        <p class="small text-primary">
+          It will be of great benefit to you if you fill out the information in
+          the <strong>about </strong>section of your portfolio completely.
+        </p>
+        <div class="accordion-body">
+          <form [formGroup]="userForm">
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="imgUrl"
+                id="imgUrl"
+                name="imgUrl"
+                required="required"
+              />
+              <span>Profile image url</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="email"
+                formControlName="email"
+                id="email"
+                name="email"
+                required="required"
+              />
+              <span>E-mail Addres</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="firstName"
+                id="firstName"
+                name="firstName"
+                required="required"
+              />
+              <span>First Name</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="lastName"
+                id="lastName"
+                name="lastName"
+                required="required"
+              />
+              <span>Last Name</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="country"
+                id="country"
+                name="country"
+                required="required"
+              />
+              <span>Country of Residence</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="city"
+                id="city"
+                name="city"
+                required="required"
+              />
+              <span>City of Residence</span>
+            </div>
+            <div class="inputbox mb-5">
+              <textarea
+                form="testformid"
+                type="text"
+                formControlName="preface"
+                id="preface"
+                name="preface"
+                required="required"
+                rows="3"
+              ></textarea>
+              <span>let's get to know you briefly</span>
+            </div>
+            <br />
+            <div class="inputbox mt-2">
+              <input type="button" value="Next" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item mb-3">
+      <h5 class="accordion-header" id="flush-headingThree">
+        <div
+          class="accordion-button collapsed center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseThree"
+          aria-expanded="false"
+          aria-controls="flush-collapseThree"
+        >
+          social media accounts
+        </div>
+      </h5>
+      <div
+        id="flush-collapseThree"
+        class="center accordion-collapse collapse"
+        aria-labelledby="flush-headingThree"
+        data-bs-parent="#accordionFlushExample"
+      >
+        <p class="small text-primary">
+          Sharing a few social media accounts can give you different means of
+          transportation.
+        </p>
+        <div class="accordion-body">
+          <form [formGroup]="userForm">
+            <div
+              class="inputbox"
+              *ngFor="let socialMedia of socialMediaList; let i = index"
+            >
+              <input
+                type="text"
+                formControlName="linkedin"
+                id="linkedin"
+                name="linkedin"
+                required="required"
+              />
+              <span>LinkedIn Url</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="github"
+                id="github"
+                name="github"
+                required="required"
+              />
+              <span>Github Url</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="medium"
+                id="medium"
+                name="medium"
+                required="required"
+              />
+              <span>Medium url</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="stackoverflow"
+                id="stackoverflow"
+                name="stackoverflow"
+                required="required"
+              />
+              <span>Stack-overflow Url</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="facebook"
+                id="facebook"
+                name="facebook"
+                required="required"
+              />
+              <span>.facebook Url</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="twitter"
+                id="twitter"
+                name="twitter"
+                required="required"
+              />
+              <span>Twitter Url</span>
+            </div>
+            <div class="inputbox">
+              <input
+                type="text"
+                formControlName="instagram"
+                id="instagram"
+                name="instagram"
+                required="required"
+              />
+              <span>Instagram Url</span>
+            </div>
+            <div class="inputbox">
+              <input type="button" value="next" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item mb-3">
+      <h5 class="accordion-header" id="flush-headingFour">
+        <div
+          class="accordion-button collapsed center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseFour"
+          aria-expanded="false"
+          aria-controls="flush-collapseFour"
+        >
+          share your work experience
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="addExperience()"
+          >
+            <i class="fas fa-plus"></i> new experience
+          </button>
+        </div>
+      </h5>
+      <div
+        id="flush-collapseFour"
+        class="center accordion-collapse collapse"
+        aria-labelledby="flush-headingFour"
+        data-bs-parent="#accordionFlushExample"
+      >
+        <p class="small text-primary">
+          Sharing a few social media accounts can give you different means of
+          transportation.
+        </p>
+        <div class="accordion-body">
+          <form action="#" class="invoice-repeater">
+            <div *ngFor="let experience of experienceList; let i = index">
+              <div class="row d-flex align-items-end list-group-item">
+                <div class="col-md-4 col-12">
+                  <div class="form-group">
+                    <label for="location{{ i }}">Location</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="experience.location"
+                      name="location{{ i }}"
+                      id="location{{ i }}"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-group">
+                    <label for="position{{ i }}">position</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="experience.position"
+                      name="position{{ i }}"
+                      id="position{{ i }}"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-group">
+                    <label for="startDate{{ i }}">startDate</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="experience.startDate"
+                      name="startDate{{ i }}"
+                      id="startDate{{ i }}"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-group">
+                    <label for="finishDate{{ i }}">finishDate</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="experience.finishDate"
+                      name="finishDate{{ i }}"
+                      id="finishDate{{ i }}"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-group">
+                    <label for="description{{ i }}">description</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="experience.description"
+                      name="description{{ i }}"
+                      id="description{{ i }}"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <button (click)="onSubmit()">Ekle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

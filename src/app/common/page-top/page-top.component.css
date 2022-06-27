@@ -1,0 +1,12 @@
+.page-top {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@media (max-width: 992px) {
+
+  .px-3,
+  .border,
+  .text {
+    display: none;
+  }
+}
