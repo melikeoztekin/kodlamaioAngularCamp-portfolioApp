@@ -1,5 +1,6 @@
+import { SocialMedia } from './../models/socialMedia';
 import { Experience } from './../models/experience';
-import { Database, onValue, ref, set } from '@angular/fire/database';
+import { Database, get, onValue, ref, set } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { GetUserData } from '../models/getUserData';
@@ -25,9 +26,28 @@ export class FirebaseService {
       GetUserData.experience = data.experience;
     });
   }
-  setUser(userModel: User, experienceLis: Experience[]) {
+  async getExpreince(userName: string) {
+    const snapshot = await get(ref(this.database, `user/${userName}`));
+    return snapshot.val().experience;
+  }
+  setUser(
+    userModel: User,
+    experienceLis: Experience[],
+    socialMedia: SocialMedia
+  ) {
     userModel.experience = experienceLis;
-    set(ref(this.database, 'user/' + userModel.userName), userModel);
+    userModel.socialMedia = socialMedia;
+    set(ref(this.database, 'user/' + userModel.userName), {
+      email: userModel.email,
+      firstName: userModel.firstName,
+      lastName: userModel.lastName,
+      imgUrl: userModel.imgUrl,
+      country: userModel.country,
+      city: userModel.city,
+      preface: userModel.preface,
+      socialMedia: socialMedia,
+      experience: experienceLis,
+    });
     alert('portfolio is being prepared');
     this._router.navigateByUrl('cv/' + userModel.userName);
   }

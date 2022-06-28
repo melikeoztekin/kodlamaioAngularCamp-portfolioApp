@@ -1,3 +1,4 @@
+import { SocialMedia } from './socialMedia';
 import { User } from './user';
 
 export const GetUserData: User = {
@@ -9,6 +10,14 @@ export const GetUserData: User = {
   country: '',
   city: '',
   preface: '',
-  socialMedia: [],
+  socialMedia: {
+    linkedin: '',
+    github: '',
+    stackoverflow: '',
+    medium: '',
+    facebook: '',
+    twitter: '',
+    instagram: '',
+  },
   experience: [],
 };

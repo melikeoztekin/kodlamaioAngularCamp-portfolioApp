@@ -9,6 +9,6 @@ export class User {
   country: string;
   city: string;
   preface: string;
-  socialMedia: SocialMedia[];
+  socialMedia: SocialMedia;
   experience: Experience[];
 }

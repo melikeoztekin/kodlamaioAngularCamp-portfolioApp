@@ -21,11 +21,24 @@ export class CreatePortfolioComponent implements OnInit {
     city: new FormControl('', [Validators.required]),
     preface: new FormControl('', [Validators.required]),
   });
+  socialMediaForm = new FormGroup({
+    linkedin: new FormControl(''),
+    github: new FormControl(''),
+    stackoverflow: new FormControl(''),
+    medium: new FormControl(''),
+    facebook: new FormControl(''),
+    twitter: new FormControl(''),
+    instagram: new FormControl(''),
+  });
   constructor(private firebaseService: FirebaseService) {}
 
   ngOnInit(): void {}
   onSubmit() {
-    this.firebaseService.setUser(this.userForm.value, this.experienceList);
+    this.firebaseService.setUser(
+      this.userForm.value,
+      this.experienceList,
+      this.socialMediaForm.value
+    );
   }
   addExperience() {
     this.experienceList.push({

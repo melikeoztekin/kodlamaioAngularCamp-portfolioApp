@@ -19,10 +19,12 @@ export class ExperienceComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.activatedRoute.params.subscribe(async (param) => {
-    //   if (param['userName']) {
-    //     this.experience = await this.firebaseService.getUser(param['userName']);
-    //   }
-    // });
+    this.activatedRoute.params.subscribe(async (param) => {
+      if (param['userName']) {
+        this.experience = await this.firebaseService.getExpreince(
+          param['userName']
+        );
+      }
+    });
   }
 }

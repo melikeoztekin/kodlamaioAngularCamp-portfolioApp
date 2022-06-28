@@ -175,17 +175,13 @@
           transportation.
         </p>
         <div class="accordion-body">
-          <form [formGroup]="userForm">
-            <div
-              class="inputbox"
-              *ngFor="let socialMedia of socialMediaList; let i = index"
-            >
+          <form [formGroup]="socialMediaForm">
+            <div class="inputbox">
               <input
                 type="text"
                 formControlName="linkedin"
                 id="linkedin"
                 name="linkedin"
-                required="required"
               />
               <span>LinkedIn Url</span>
             </div>
@@ -195,7 +191,6 @@
                 formControlName="github"
                 id="github"
                 name="github"
-                required="required"
               />
               <span>Github Url</span>
             </div>
@@ -205,7 +200,6 @@
                 formControlName="medium"
                 id="medium"
                 name="medium"
-                required="required"
               />
               <span>Medium url</span>
             </div>
@@ -215,7 +209,6 @@
                 formControlName="stackoverflow"
                 id="stackoverflow"
                 name="stackoverflow"
-                required="required"
               />
               <span>Stack-overflow Url</span>
             </div>
