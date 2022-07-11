@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class FirebaseService {
-  constructor(public database: Database, private _router: Router) {}
+  constructor(public _database: Database, private _router: Router) {}
   getUser(userName: string) {
-    const startConfRef = ref(this.database, `user/${userName}`);
+    const startConfRef = ref(this._database, `user/${userName}`);
     onValue(startConfRef, (snapshot) => {
       const data: User = snapshot.val();
       GetUserData.email = data.email;
@@ -26,18 +26,18 @@ export class FirebaseService {
       GetUserData.experience = data.experience;
     });
   }
-  async getExpreince(userName: string) {
-    const snapshot = await get(ref(this.database, `user/${userName}`));
+  async getExperience(userName: string) {
+    const snapshot = await get(ref(this._database, `user/${userName}`));
     return snapshot.val().experience;
   }
   setUser(
     userModel: User,
-    experienceLis: Experience[],
+    experienceList: Experience[],
     socialMedia: SocialMedia
   ) {
-    userModel.experience = experienceLis;
+    userModel.experience = experienceList;
     userModel.socialMedia = socialMedia;
-    set(ref(this.database, 'user/' + userModel.userName), {
+    set(ref(this._database, 'user/' + userModel.userName), {
       email: userModel.email,
       firstName: userModel.firstName,
       lastName: userModel.lastName,
@@ -46,7 +46,7 @@ export class FirebaseService {
       city: userModel.city,
       preface: userModel.preface,
       socialMedia: socialMedia,
-      experience: experienceLis,
+      experience: experienceList,
     });
     alert('portfolio is being prepared');
     this._router.navigateByUrl('cv/' + userModel.userName);

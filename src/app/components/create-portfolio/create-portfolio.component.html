@@ -182,6 +182,7 @@
                 formControlName="linkedin"
                 id="linkedin"
                 name="linkedin"
+                required="required"
               />
               <span>LinkedIn Url</span>
             </div>
@@ -191,6 +192,7 @@
                 formControlName="github"
                 id="github"
                 name="github"
+                required="required"
               />
               <span>Github Url</span>
             </div>
@@ -200,6 +202,7 @@
                 formControlName="medium"
                 id="medium"
                 name="medium"
+                required="required"
               />
               <span>Medium url</span>
             </div>
@@ -209,6 +212,7 @@
                 formControlName="stackoverflow"
                 id="stackoverflow"
                 name="stackoverflow"
+                required="required"
               />
               <span>Stack-overflow Url</span>
             </div>
@@ -220,7 +224,7 @@
                 name="facebook"
                 required="required"
               />
-              <span>.facebook Url</span>
+              <span>Facebook Url</span>
             </div>
             <div class="inputbox">
               <input
@@ -260,13 +264,6 @@
           aria-controls="flush-collapseFour"
         >
           share your work experience
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="addExperience()"
-          >
-            <i class="fas fa-plus"></i> new experience
-          </button>
         </div>
       </h5>
       <div
@@ -276,84 +273,95 @@
         data-bs-parent="#accordionFlushExample"
       >
         <p class="small text-primary">
-          Sharing a few social media accounts can give you different means of
-          transportation.
+          Summary information about your work experience will always be
+          interesting.
         </p>
         <div class="accordion-body">
-          <form action="#" class="invoice-repeater">
+          <form [formGroup]="experienceForm">
             <div *ngFor="let experience of experienceList; let i = index">
-              <div class="row d-flex align-items-end list-group-item">
-                <div class="col-md-4 col-12">
-                  <div class="form-group">
-                    <label for="location{{ i }}">Location</label>
+              <div class="row">
+                <div class="col-12 my-2">
+                  <div class="inputbox">
                     <input
                       type="text"
-                      class="form-control"
-                      [(ngModel)]="experience.location"
-                      name="location{{ i }}"
+                      formControlName="location"
                       id="location{{ i }}"
-                      placeholder=""
+                      name="location{{ i }}"
+                      required="required"
+                      [(ngModel)]="experience.location"
                     />
+                    <span>Location</span>
                   </div>
                 </div>
-                <div class="col-md-4 col-12">
-                  <div class="form-group">
-                    <label for="position{{ i }}">position</label>
+                <div class="col-12 my-2">
+                  <div class="inputbox">
                     <input
                       type="text"
-                      class="form-control"
-                      [(ngModel)]="experience.position"
-                      name="position{{ i }}"
+                      formControlName="position"
                       id="position{{ i }}"
-                      placeholder=""
+                      name="position{{ i }}"
+                      required="required"
+                      [(ngModel)]="experience.position"
                     />
+                    <span>Position</span>
                   </div>
                 </div>
-                <div class="col-md-4 col-12">
-                  <div class="form-group">
-                    <label for="startDate{{ i }}">startDate</label>
+                <div class="col-md-6 col-12 my-2">
+                  <div class="inputbox">
                     <input
                       type="text"
-                      class="form-control"
+                      formControlName="startDate"
                       [(ngModel)]="experience.startDate"
                       name="startDate{{ i }}"
                       id="startDate{{ i }}"
-                      placeholder=""
+                      required="required"
                     />
+                    <span>StartDate</span>
                   </div>
                 </div>
-                <div class="col-md-4 col-12">
-                  <div class="form-group">
-                    <label for="finishDate{{ i }}">finishDate</label>
+                <div class="col-md-6 col-12 my-2">
+                  <div class="inputbox">
                     <input
                       type="text"
-                      class="form-control"
+                      formControlName="finishDate"
                       [(ngModel)]="experience.finishDate"
                       name="finishDate{{ i }}"
                       id="finishDate{{ i }}"
-                      placeholder=""
+                      required="required"
                     />
+                    <span>Finish Date</span>
                   </div>
                 </div>
-                <div class="col-md-4 col-12">
-                  <div class="form-group">
-                    <label for="description{{ i }}">description</label>
+                <div class="col-12 my-2">
+                  <div class="inputbox">
                     <input
                       type="text"
-                      class="form-control"
+                      formControlName="description"
                       [(ngModel)]="experience.description"
                       name="description{{ i }}"
                       id="description{{ i }}"
-                      placeholder=""
+                      required="required"
                     />
+                    <span>Description</span>
                   </div>
                 </div>
               </div>
             </div>
           </form>
-          <button (click)="onSubmit()">Ekle</button>
+          <button
+            type="button"
+            class="btn btn-secondary mt-2"
+            (click)="addExperience()"
+          >
+            <i class="fas fa-plus"></i> new experience
+          </button>
         </div>
       </div>
+    </div>
+    <div class="col-12 mt-2">
+      <button class="inputbox btn btn-success" (click)="onSubmit()">
+        Create Portfolio
+      </button>
     </div>
   </div>
 </div>

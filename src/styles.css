@@ -7983,6 +7983,7 @@ fieldset:disabled .btn {
 
 .flex-shrink-0 {
   flex-shrink: 0 !important;
+  text-transform: capitalize;
 }
 
 .flex-shrink-1 {

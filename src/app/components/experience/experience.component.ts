@@ -11,18 +11,22 @@ import { async } from '@angular/core/testing';
   styleUrls: ['./experience.component.css'],
 })
 export class ExperienceComponent implements OnInit {
-  userData = GetUserData;
+  users = GetUserData;
   experience: Experience[];
   constructor(
-    private firebaseService: FirebaseService,
-    private activatedRoute: ActivatedRoute
+    private _firebaseService: FirebaseService,
+    private _activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(async (param) => {
+    this._activatedRoute.params.subscribe(async (param) => {
       if (param['userName']) {
-        this.experience = await this.firebaseService.getExpreince(
+        this.experience = await this._firebaseService.getExperience(
           param['userName']
+        );
+      } else {
+        this.experience = await this._firebaseService.getExperience(
+          'philipgilbert'
         );
       }
     });

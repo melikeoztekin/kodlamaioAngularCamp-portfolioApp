@@ -12,8 +12,7 @@ export class CvComponent implements OnInit {
   createVisible = false;
   constructor(
     private _firebaseService: FirebaseService,
-    private _activatedRoute: ActivatedRoute,
-    private _router: Router
+    private _activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
